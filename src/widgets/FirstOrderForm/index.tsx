@@ -11,9 +11,9 @@ export const FirstOrderForm = () => {
         },
 
         validate: {
-            name: (value) => (value.length < 1 ? 'Required Field' : null),
-            phone: (value) => (value.length < 1 ? 'Required Field' : null),
-            email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+            name: (value: string) => (value.length < 1 ? 'Required Field' : null),
+            phone: (value: string) => (value.length < 1 ? 'Required Field' : null),
+            email: (value: string) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
         },
     });
 
