@@ -1,0 +1,1 @@
+import{j as t}from"./index-C4oQiuMV.js";import{C as o}from"./index-DTItgIRL.js";import{R as r,C as s}from"./index-CnsDO8Kd.js";import"./Stack-BBJdau8K.js";function n(){return t.jsxs(r,{title:"Categories",children:[t.jsx(o,{showAll:!0}),t.jsx(s,{})]})}export{n as default};
