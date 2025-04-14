@@ -15,7 +15,7 @@ export const Header = () => {
             <Container py='xl'>
                 <Flex align='center' justify='space-between'>
                     <Link to='/' relative='path'>
-                        <Image className={s.logo} width={70} height={70} src='/logo.svg' alt='Logotype' />
+                        <Image className={s.logo} width={70} height={70} src='https://igorvoronin.github.io/kt-framework-js/logo.svg' alt='Logotype' />
                     </Link>
                     <Navigation />
                     <CartButton counter={productsCounter} />

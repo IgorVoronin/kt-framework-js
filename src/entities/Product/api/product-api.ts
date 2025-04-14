@@ -7,8 +7,11 @@ import { ProductDtoSchema } from '../types';
 export const ProductApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
         getAllSales: build.query<ProductDto, void>({
-            query: () => API.SALE,
-            transformResponse: (res: unknown) => ProductDtoSchema.array().parse(res),
+            query: () => API.ALL_PRODUCTS,
+            transformResponse: (res: unknown) => {
+                const products = ProductDtoSchema.array().parse(res);
+                return products.filter(product => product.discont_price && product.discont_price > 0);
+            },
         }),
     }),
 });

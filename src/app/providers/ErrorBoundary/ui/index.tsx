@@ -28,7 +28,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         const { children, fallback } = this.props;
         if (hasError) {
             if (!fallback) {
-                return <Suspense fallback='Something went wrong'>{/*<PageError/>*/}</Suspense>;
+                return <Suspense fallback='Something went wrong'></Suspense>;
             }
 
             return this.props.fallback;

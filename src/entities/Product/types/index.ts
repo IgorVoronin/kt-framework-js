@@ -4,7 +4,7 @@ export const ProductDtoSchema = z.object({
     id: z.number(),
     title: z.string(),
     price: z.number(),
-    discont_price: z.number(),
+    discont_price: z.number().nullable(),
     description: z.string(),
     image: z.string(),
     createdAt: z.date().or(z.string()),

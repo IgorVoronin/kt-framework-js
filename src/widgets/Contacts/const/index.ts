@@ -1,6 +1,6 @@
 export const YMapsQuery = {
-    apikey: import.meta.env.VITE_YMAP_GEO_API_KEY,
-    suggest_apikey: import.meta.env.VITE_YMAP_SUGGEST_API_KEY,
+    apikey: '6e71952c-f0be-4891-8c47-e015f6f08b18',
+    suggest_apikey: '6e71952c-f0be-4891-8c47-e015f6f08b18',
 };
 
 export const MapState = {

@@ -1,3 +1,4 @@
+/* Закомментируем локальные шрифты, так как используем Google Fonts
 @font-face {
     src: url("../../assets/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
     font-family: "Montserrat";
@@ -37,3 +38,4 @@
     font-style: normal;
     font-display: swap;
 }
+*/

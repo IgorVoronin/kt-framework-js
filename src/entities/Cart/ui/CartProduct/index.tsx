@@ -1,5 +1,6 @@
 import { ActionIcon, Box, CloseIcon, Group, Image, Stack, Text, Title } from '@mantine/core';
 
+import { API } from '@/shared/api';
 import { CartProductsControls } from '../CartProductsControls';
 
 interface CartProductProps {
@@ -10,7 +11,7 @@ interface CartProductProps {
     setIncrement: VoidFunction;
     setDecrement: VoidFunction;
     removeAllProducts: VoidFunction;
-    discont_price?: number;
+    discont_price?: number | null;
 }
 
 export const CartProduct = ({
@@ -23,6 +24,8 @@ export const CartProduct = ({
     setDecrement,
     removeAllProducts,
 }: CartProductProps) => {
+    const fullImageSrc = image ? `${API.BASE_URL}${image}` : undefined;
+
     return (
         <Box
             w='100%'
@@ -32,7 +35,7 @@ export const CartProduct = ({
         >
             <Group w='100%' wrap='nowrap'>
                 <Box style={{ borderRight: '1px solid var(--mantine-color-gray-3)' }}>
-                    <Image maw={200} mah={180} src={image} />
+                    <Image maw={200} mah={180} src={fullImageSrc} />
                 </Box>
                 <Stack gap={32} p={32} w='100%' flex={1}>
                     <Group gap={0} justify='space-between' w='100%'>

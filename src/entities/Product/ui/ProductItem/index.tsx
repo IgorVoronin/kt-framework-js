@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { Badge, Card, Group, Image, Text } from '@mantine/core';
 
+import { API } from '@/shared/api';
 import { calculateDiscount } from '@/shared/lib';
 
 import type { Product } from '../../types';
@@ -13,6 +14,8 @@ export const ProductItem = ({ id, image, title, price, discont_price }: ProductI
         discountPrice: discont_price ?? 0,
     });
 
+    const fullImageSrc = image ? `${API.BASE_URL}${image}` : undefined;
+
     return (
         <Card h='100%' component={Link} to={`/product/${id}`} shadow='sm' padding='lg' radius='md' withBorder>
             <Card.Section pos='relative'>
@@ -23,7 +26,7 @@ export const ProductItem = ({ id, image, title, price, discont_price }: ProductI
                         </Text>
                     </Badge>
                 ) : null}
-                <Image src={image} height={284} alt={title} />
+                <Image src={fullImageSrc} height={284} alt={title} />
             </Card.Section>
 
             <Group justify='space-between' mt='md' mb='md'>

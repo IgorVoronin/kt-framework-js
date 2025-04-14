@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Box, Flex, Group, Image, Stack, Text, Title } from '@mantine/core';
 
+import { API } from '@/shared/api';
 import { calculateDiscount } from '@/shared/lib';
 
 interface ProductCardProps {
@@ -8,15 +9,18 @@ interface ProductCardProps {
     title?: string;
     price?: number;
     description?: string;
-    discont_price?: number;
+    discont_price?: number | null;
     addToCartSlot?: ReactNode;
 }
 
 export const ProductCard = ({ image, title, discont_price, price, description, addToCartSlot }: ProductCardProps) => {
+    // Добавляем базовый URL API к пути изображения
+    const fullImageSrc = image ? `${API.BASE_URL}${image}` : undefined;
+
     return (
         <Box>
             <Flex gap={32}>
-                <Image radius='lg' maw={780} mah={572} w='100%' h='100%' src={image} alt={title} />
+                <Image radius='lg' maw={780} mah={572} w='100%' h='100%' src={fullImageSrc} alt={title} />
                 <Stack>
                     <Title fz={40} mb={32} lh={1}>
                         {title}

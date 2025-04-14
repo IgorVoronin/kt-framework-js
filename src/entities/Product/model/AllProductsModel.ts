@@ -36,7 +36,7 @@ export const AllProductsModel = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchAllProducts.fulfilled, (state, action) => {
             state.products = action.payload;
-            state.salesProducts = action.payload.filter((product) => product.discont_price > 0);
+            state.salesProducts = action.payload.filter((product) => product.discont_price && product.discont_price > 0);
             state.isLoading = false;
         });
 

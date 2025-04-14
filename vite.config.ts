@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     plugins: [react()],
-    base: '/kt-framework-js/', // Путь к репозиторию
+    base: '/kt-framework-js/',
     resolve: {
         alias: {
             '~': fileURLToPath(new URL('./', import.meta.url)),

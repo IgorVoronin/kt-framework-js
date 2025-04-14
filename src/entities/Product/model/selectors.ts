@@ -13,7 +13,7 @@ const selectProducts = <T>(state: ProductsModelState<T>) => state.products;
 const selectSortState = <T>(state: ProductsModelState<T>) => state.sortState;
 const selectProductsWithDiscounts = <T extends CategoryByIdDto | ProductDto>(state: ProductsModelState<T>) =>
     (isCategoryApi(state.products) ? state.products?.data : (state.products as ProductDto))?.filter((p) =>
-        Boolean(p.discont_price)
+        Boolean(p.discont_price && p.discont_price > 0)
     );
 const selectFilteredProducts = <T>(state: ProductsModelState<T>, onlySales?: boolean) => {
     let currentProduct: ProductDto = [];
@@ -31,7 +31,7 @@ const selectFilteredProducts = <T>(state: ProductsModelState<T>, onlySales?: boo
     if (!currentProduct) return isCategoryApi(state.products) ? state.products.data : state.products;
 
     if (state.isDiscounted) {
-        currentProduct = currentProduct?.filter((product) => Number(product.discont_price) > 0);
+        currentProduct = currentProduct?.filter((product) => product.discont_price && Number(product.discont_price) > 0);
     }
 
     if (state.priceFrom) {
