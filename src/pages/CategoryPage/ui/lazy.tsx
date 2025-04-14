@@ -1,3 +1,3 @@
 import { lazy } from 'react';
 
-export const CategoryPageLazy = lazy(() => import('./[id]'));
+export const CategoryPageLazy = lazy(() => import('./CategoryDetails'));
